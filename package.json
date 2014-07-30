@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/weshardee/obsidian-dynamic-sheets/issues"
   },
-  "homepage": "https://github.com/weshardee/obsidian-dynamic-sheets"
+  "homepage": "https://github.com/weshardee/obsidian-dynamic-sheets",
+  "devDependencies": {
+    "gulp": "^3.8.6"
+  }
 }
