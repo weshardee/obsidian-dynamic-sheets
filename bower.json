@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "dynamic_sheet_templates": "https://github.com/obsidianportal/dynamic_sheet_templates"
+    "dynamic_sheet_templates": "https://github.com/obsidianportal/dynamic_sheet_templates.git"
   }
 }
