@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-dynamic-sheets",
+  "version": "0.0.0",
+  "homepage": "https://github.com/weshardee/obsidian-dynamic-sheets",
+  "authors": [
+    "Wes Hardee <weshardee@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dynamic_sheet_templates": "https://github.com/obsidianportal/dynamic_sheet_templates"
+  }
+}
