@@ -60,4 +60,4 @@ gulp.task('assemble', function() {
     ;
 });
 
-gulp.task('default', ['clean', 'assemble']);
+gulp.task('default', ['clean', 'assemble', 'vendor', 'data', 'styles']);
