@@ -16,6 +16,8 @@ var ASSEMBLE_OPTIONS = {
 
 var DEST_DIR = './web';
 
+var dest = gulp.dest(DEST_DIR);
+
 gulp.task('clean', function() {
     gulp.src(DEST_DIR)
         .pipe(rimraf())
@@ -24,7 +26,7 @@ gulp.task('clean', function() {
 
 gulp.task('example', function() {
     gulp.src('./bower_components/dynamic_sheet_templates/devkit/**/*')
-        .pipe(gulp.dest(DEST_DIR))
+        .pipe(dest)
     ;
 });
 
@@ -33,7 +35,13 @@ gulp.task('vendor', function() {
         .pipe(plumber())
         .pipe(concat('vendor.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(DEST_DIR))
+        .pipe(dest)
+    ;
+});
+
+gulp.task('styles', function() {
+    gulp.src('./src/scss/styles.scss')
+        .pipe(dest)
     ;
 });
 
@@ -42,7 +50,7 @@ gulp.task('assemble', function() {
         .pipe(plumber())
         .pipe(assemble(ASSEMBLE_OPTIONS))
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest(DEST_DIR))
+        .pipe(dest)
     ;
 });
 
