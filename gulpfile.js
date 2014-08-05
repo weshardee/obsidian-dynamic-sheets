@@ -4,6 +4,7 @@ var assemble = require('gulp-assemble');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
 
 var ASSEMBLE_OPTIONS = {
     layout: 'default.hbs',
@@ -40,6 +41,7 @@ gulp.task('assemble', function() {
     gulp.src('./src/sheets/**/*.hbs', {base: './src/sheets'})
         .pipe(plumber())
         .pipe(assemble(ASSEMBLE_OPTIONS))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(DEST_DIR))
     ;
 });
