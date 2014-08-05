@@ -19,8 +19,10 @@
   "devDependencies": {
     "gulp": "^3.8.6",
     "gulp-assemble": "^0.1.7",
+    "gulp-concat": "^2.3.4",
     "gulp-plumber": "^0.6.4",
     "gulp-rimraf": "^0.1.0",
+    "gulp-uglify": "^0.3.1",
     "gulp-webserver": "^0.5.0"
   }
 }

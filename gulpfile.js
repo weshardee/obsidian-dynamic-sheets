@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var rimraf = require('gulp-rimraf');
 var assemble = require('gulp-assemble');
 var plumber = require('gulp-plumber');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 var ASSEMBLE_OPTIONS = {
     layout: 'default.hbs',
@@ -14,11 +16,22 @@ var ASSEMBLE_OPTIONS = {
 var DEST_DIR = './web';
 
 gulp.task('clean', function() {
-    gulp.src(DEST_DIR).pipe(rimraf());
+    gulp.src(DEST_DIR)
+        .pipe(rimraf())
+    ;
 });
 
 gulp.task('example', function() {
     gulp.src('./bower_components/dynamic_sheet_templates/devkit/**/*')
+        .pipe(gulp.dest(DEST_DIR))
+    ;
+});
+
+gulp.task('vendor', function() {
+    gulp.src('./bower_components/dynamic_sheet_templates/devkit/javascripts/*.js')
+        .pipe(plumber())
+        .pipe(concat('vendor.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(DEST_DIR))
     ;
 });
