@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var rimraf = require('gulp-rimraf');
 var assemble = require('gulp-assemble');
+var plumber = require('gulp-plumber');
 
 var ASSEMBLE_OPTIONS = {
     data: 'src/assemble/data/*.json',
@@ -19,7 +20,10 @@ gulp.task('example', function() {
 });
 
 gulp.task('assemble', function() {
-    gulp.src('src/sheets/*.hbs').pipe(assemble(ASSEMBLE_OPTIONS));
+    gulp.src('src/sheets/*.hbs')
+        .pipe(plumber())
+        .pipe(assemble(ASSEMBLE_OPTIONS))
+    ;
 });
 
 gulp.task('default', ['clean', 'assemble']);
