@@ -1,4 +1,55 @@
 ---
 title: minimal4e
-css: minimal4e
 ---
+
+<div class="basic_info">
+  <h3>Basic Info</h3>
+  <div class="name">
+    <span>Name:</span>
+    <span class="dsf dsf_name"></span>
+  </div>
+  <div class="player">
+    <span>Player:</span>
+    <span class="dsf dsf_player"></span>
+  </div>
+  <div class="campaign">
+    <span>Campaign:</span>
+    <span class="dsf dsf_campaign"></span>
+  </div>
+  <div class="level">
+    <span>Level:</span>
+    <span class="dsf dsf_level"></span>
+  </div>
+</div>
+
+<div class="ability_scores">
+  <h3>Ability Scores</h3>
+  <div class="ability_score_header">
+    <span>Ability</span>
+    <span>Score</span>
+    <span>Mod</span>
+    <span>Mod + 1/2 Level</span>
+  </div>
+  <div class="ability_score strength">
+    <span class="ability_score_name">STR</span>
+    <span class="dsf ability_score_score dsf_str"></span>
+    <span class="dsf ability_score_modifier dsf_str_modifier"></span>
+    <span class="dsf ability_score_modifier_plus_half_level dsf_str_modifier_plus_half_level"></span>
+  </div>
+  <div class="ability_score dexterity">
+    <span class="ability_score_name">DEX</span>
+    <span class="dsf ability_score_score dsf_dex"></span>
+    <span class="dsf ability_score_modifier dsf_dex_modifier"></span>
+    <span class="dsf ability_score_modifier_plus_half_level dsf_dex_modifier_plus_half_level"></span>
+  </div>
+</div>
+
+<!-- An example of how to use checkboxes -->
+<div class="trained_skills">
+  <h3>Trained Skills</h3>
+  <ul>
+    <li><span class="dsf dsf_athletics_trained checkbox"></span>Athletics</li>
+    <li><span class="dsf dsf_religion_trained checkbox"></span>Religion</li>
+    <li><span class="dsf dsf_stealth_trained checkbox"></span>Stealth</li>
+  </ul>
+</div> <!-- trained_skills -->
