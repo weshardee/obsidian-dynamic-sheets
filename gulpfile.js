@@ -1,12 +1,25 @@
 var gulp = require('gulp');
 var rimraf = require('gulp-rimraf');
+var assemble = require('gulp-assemble');
 
-gulp.task('default', function(cb) {
-    // place code for your default task here
+var ASSEMBLE_OPTIONS = {
+    data: 'src/assemble/data/*.json',
+    partials: 'src/assemble/partials/*.hbs',
+    layoutdir: 'src/assemble/layouts/'
+};
 
-    rimraf('./web');
+gulp.task('clean', function() {
+    gulp.src('./web').pipe(rimraf());
+});
 
+gulp.task('example', function() {
     gulp.src('./bower_components/dynamic_sheet_templates/devkit/**/*')
         .pipe(gulp.dest('./web'))
     ;
 });
+
+gulp.task('assemble', function() {
+    gulp.src('src/sheets/*.hbs').pipe(assemble(ASSEMBLE_OPTIONS));
+});
+
+gulp.task('default', ['clean', 'assemble']);
