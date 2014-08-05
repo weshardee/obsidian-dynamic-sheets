@@ -2,9 +2,8 @@
 title: index
 layout: empty.hbs
 ---
-<ul>
-{{#each pages}}
-    {{.}}
-      <li{{#is ../../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../../page.dest this.dest}}" {{> click-tracker }}>{{data.title}}</a></li>
- {{/each}}
-</ul>
+<ul >
+  {{#each  pages }}
+    <li > <a  href ="#" > {{basename }} </a > </li >
+  {{/each  }}
+</ul >
