@@ -6,6 +6,7 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
+var sass = require('gulp-sass');
 
 // file sources
 var SRC = {};
@@ -61,7 +62,7 @@ gulp.task('vendor', function() {
 gulp.task('sass', function() {
     return gulp.src(SRC.SASS)
         .pipe(plumber())
-        // .pipe(sass())
+        .pipe(sass())
         .pipe(gulp.dest(DEST.ASSETS))
     ;
 });
