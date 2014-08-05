@@ -45,6 +45,12 @@ gulp.task('styles', function() {
     ;
 });
 
+gulp.task('data', function() {
+    gulp.src('./src/sheets/*.js')
+        .pipe(dest)
+    ;
+});
+
 gulp.task('assemble', function() {
     gulp.src('./src/sheets/**/*.hbs', {base: './src/sheets'})
         .pipe(plumber())
