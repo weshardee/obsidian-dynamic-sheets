@@ -1,0 +1,10 @@
+.dynamic_sheet * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;
+}
+
+.dynamic_sheet *, .dynamic_sheet:before, .dynamic_sheet:after {
+    box-sizing: border-box;
+}
